@@ -23,38 +23,3 @@ jobs:
         run: 
           echo Add other actions to build,
           echo test, and deploy your project.
-          
-      #checkout
-echo Iniciando etapa de checkout
-echo
-cd /repository
-echo Limpando repositorio
-echo
-rm -rf react-app
-echo Baixando projeto
-echo
-git clone https://github.com/kelvin-alef/react-app.git
-echo
-
-#build
-echo Iniciando etapa de build
-echo
-cd /repository/react-app
-echo Instalando dependencias
-echo
-npm install
-echo
-echo Compilando projeto
-echo
-npm run build
-echo
-
-# deploy
-echo Iniciando etapa de deploy
-echo
-systemctl stop react-app
-rm -rf /app/react-app
-mv /repository/react-app/build /app/react-app
-systemctl start react-app
-echo deploy finalizado
-
